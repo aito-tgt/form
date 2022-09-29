@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<meta name="description" content="" />
+<link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
+<link href="css/index.css" rel="stylesheet" />
+<script src="js/common.js" ></script>
+</head>
+<body>
+<div id="wrapper">
+<div class="items">
+    <h2>サンプル</h2>
+    <div class="item">
+        <p class="sublabel">通常</p>
+        <input type="text" name="" placeholder="山田太郎" class="middle">
+    </div>
+    <div class="item">
+        <p class="sublabel">エラー</p>
+        <input class="error middle" type="text" name="" placeholder="山田太郎" >
+        <p class="message error">エラーメッセージ</p>
+    </div>
+    <div class="item">
+        <p class="sublabel">注意</p>
+        <input class="warning middle" type="text" name="" placeholder="山田太郎">
+        <p class="message warning">エラーメッセージ</p>
+    </div>
+    <div class="item">
+        <p class="sublabel">入力不可</p>
+        <input class="middle" type="text" name="" placeholder="山田太郎" disabled>
+    </div>
+</div>
+<div class="items">
+    <h2>サイズサンプル</h2>
+    <div class="item">
+    <input type="text" name="" placeholder="01234" class="num">
+    </div>
+    <div class="item">
+    <input type="text" name="" placeholder="ミドル" class="middle">
+    </div>
+    <div class="item">
+    <input type="text" name="" placeholder="ラージ" class="large">
+    </div>
+    <div class="item">
+    <input type="text" name="" placeholder="オート">
+    </div>
+</div>
+<div class="items">
+    <h2>アイコン/テキストサンプル</h2>
+    <div class="item">
+        <div class="icon-calendar"><input type="text" name="" placeholder="01234" class="middle"></div>
+    </div>
+    <div class="item">
+        <span class="formtext left">〒</span><input type="text" name="" placeholder="01234" class="middle">
+    </div>
+    <div class="item">
+        <div class="selectbox">
+            <select name="" id="">
+            <option value="syowa">昭和</option>
+            <option value="heisei">平成</option>  
+            <option value="reiwa">令和</option>
+        </select>
+        </div>
+        <input type="text" name="" placeholder="01234" class="num"><span class="formtext right">年</span>
+        <input type="text" name="" placeholder="01234" class="num"><span class="formtext right">月</span>
+        <input type="text" name="" placeholder="01234" class="num"><span class="formtext right">日</span>
+    </div>
+    <div class="item">
+        <input type="text" name="" placeholder="01234" class="num"><span class="formtext both">〜</span>
+        <input type="text" name="" placeholder="01234" class="num">
+    </div>
+</div>
+    <form>
+        <div class="items">
+            <fieldset>
+                <legend><label class="heading" for="name">お名前</label></legend>
+                <div class="item">
+                    <p class="sublabel">お名前</p>
+                    <input id="name" type="text" name="" placeholder="山田太郎">
+                </div>
+                <div class="item">
+                    <p class="sublabel">ふりがな</p>
+                    <input id="name" type="text" name="" placeholder="山田太郎">
+                </div>
+            </fieldset>
+        </div>
+        <div class="items">
+        <legend><label class="heading" for="comment">コメント</label></legend>
+        <div class="item">
+         <textarea id="comment" name="comment" placeholder="コメントを入力してください"></textarea>
+        </div>  
+        </div>
+        <div class="items">
+            <fieldset>
+                <legend><p class="heading">性別</p></legend>
+                <div class="item">
+                <input id="male" type="radio" name="sex" value="male"><label for="male" class="radio">男性</label>
+                <input id="female" type="radio" name="sex" value="female"><label for="female" class="radio">女性</label>
+                </div>
+            </fieldset>
+         </div>
+         <div class="items">
+            <fieldset>
+                <legend><p class="heading">好きなスポーツ</p></legend>
+                <div class="item">
+                <input id="football" type="checkbox" name="sport" value="サッカー"><label for="football" class="checkbox">サッカー</label>
+                <input id="baseball" type="checkbox" name="sport" value="野球"><label for="baseball" class="checkbox">野球</label>
+                <input id="basketball" type="checkbox" name="sport" value="バスケ"><label for="basketball" class="checkbox">バスケ</label>
+                </div>
+            </fieldset>
+        </div>
+    </form>
+</div>
+</body>
+</html>

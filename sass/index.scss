@@ -1,0 +1,275 @@
+@import './mixin';
+
+/*** The new CSS Reset - version 1.3.1 (last updated 28.10.2021) ***/
+ 
+*:where(:not(iframe,canvas,img,svg,video):not(svg *,symbol *)){all:unset;display:revert}*,*::before,*::after{box-sizing:border-box}ol,ul{list-style:none}img{max-width:100%}table{border-collapse:collapse}textarea{white-space:revert}
+
+  //全体と余白系
+
+html {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+body {
+	font-feature-settings: 'palt';
+    text-size-adjust: 100%;
+    color: $txt;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 14px;
+}
+  form{
+    width:600px;
+    margin:20px auto 0;
+    padding: 20px;
+    border: 2px solid #ddd;
+  }
+  .items+.items{
+    margin-top: 40px;
+  }
+  .item+.item{
+    margin-top: 20px;
+  }
+  .heading{
+    margin-right: 20px;
+    width:135px;
+    border-left: solid 3px #ddd;
+    padding-left: 10px;
+  }
+  legend+.item{
+    margin-top: 20px;
+  }
+
+//フォームスタイル
+
+  input,textarea,select{
+    border: 1px solid #C5C5C5;
+    border-radius: 4px;
+    padding: 8px 6px;
+
+    &:focus{
+        border: 1px solid #222222;
+    }
+    &.error{
+        border: 1px solid rgba(235, 87, 87, 1)
+    }
+    &.warning{
+         border: 1px solid rgba(242, 153, 74, 1)
+    }
+    &::placeholder {
+        color: rgba(34, 34, 34, 0.4);
+      }
+    &:not(:placeholder-shown){
+        border: 1px solid #2F80ED;
+    }
+    &:disabled{
+        opacity: .4;
+    }
+  }
+
+  input[type="text"],textarea{
+    width: 100%;
+    &.large{
+        width: 320px;
+    }
+    &.middle{
+        width: 240px;
+    }
+    &.num{
+        width: 80px;
+    }
+  }
+  
+
+  input[type="checkbox"],input[type="radio"]
+  {
+    opacity:0;
+    position: absolute;
+    }
+
+    label.checkbox{
+        position: relative;
+        display: block;
+        margin-left: 2px;
+        padding: 8px;
+        border: 1px solid #fff;
+        &:before{
+            content:"";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #C5C5C5;
+            border-radius: 2px;
+            position: relative;
+            left: -4px;
+            bottom: -2px;
+        }
+        &:after{
+            content: "";
+            width: 12px;
+            height: 9px;
+            background-position: center;
+            background-image: url(../img/check.svg);
+            position: absolute;
+            display: inline-block;
+            left: 6px;
+            top: 14px;
+            opacity: 0;
+        }
+    }
+
+    label.radio{
+        position: relative;
+        display: block;
+        margin-left: 2px;
+        padding: 8px;
+        border: 1px solid #fff;
+        &:before{
+            content:"";
+            background-position: center;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #C5C5C5;
+            border-radius: 100%;
+            position: relative;
+            left: -4px;
+            bottom: -2px;
+        }
+        &:after{
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+            background-color: #2F80ED;
+            position: absolute;
+            display: inline-block;
+            left: 8px;
+            top: 14px;
+            opacity: 0;
+        }
+        &:disabled{
+            opacity: .4;
+        }
+    }
+    input[type=radio]:checked + .radio::after,
+    input[type=checkbox]:checked + .checkbox::after {
+        opacity: 1;
+    }
+    input[type=radio]:focus-visible + .radio,
+    input[type=checkbox]:focus-visible + .checkbox {
+        border: 1px solid #222;
+        border-radius: 2px;
+    }
+
+    .selectbox{
+        position: relative;
+        width: 80px;
+        display: inline-block;
+        select{
+            padding-right: 36px;
+        }
+        &:before{
+            content: "";
+            width: 24px;
+            height: 24px;
+            background-position: center;
+            background-image: url(../img/icon.svg);
+            position: absolute;
+            display: inline-block;
+            top: 8px;
+            right: 10px;
+            pointer-events: none;
+        }
+    }
+    .icon-calendar{
+        position: relative;
+        width: 240px;
+        &:before{
+            content:"";
+            background-image: url(../img/date_range.svg);
+            background-position: center;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            position: absolute;
+            right: 8px;
+            bottom: 9px;
+        }
+    }
+
+
+  .sublabel{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+
+    &+input{
+        margin-top: 4px;
+    }
+    &+textarea{
+        margin-top: 4px;
+    }
+}
+
+  //エラーとかその他
+  .message{
+    font-size: 12px;
+    line-height: 17px;
+    margin-top: 4px;
+    &.error{
+        position: relative;
+        margin-left: 20px;
+        &:before{
+            content:"";
+            background-image: url(../img/error.svg);
+            background-position: center;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            position: absolute;
+            left: -24px;
+            bottom: 0px;
+        }
+    }
+    &.warning{
+        position: relative;
+        margin-left: 20px;
+        &:before{
+            content:"";
+            display: inline-block;
+            background-image: url(../img/warning.svg);
+            background-position: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            position: absolute;
+            left: -24px;
+            bottom: 0px;
+        }
+    }
+  }
+
+.formtext{
+    font-size: 14px;
+    &.both{
+        margin: 0 4px;
+    }
+    &.left + input{
+        margin-left: 4px;
+    }
+    &.right{
+        margin-left: 4px;
+    }
+    &.right + input{
+        margin-left: 12px;
+    }
+
+}
+
+select + input{
+    margin-left: 12px;
+}
+
